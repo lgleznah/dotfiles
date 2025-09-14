@@ -90,6 +90,17 @@ window#waybar.hidden {
   background: #F8BD96;
 }
 
+#temperature.critical {
+  background: #F8BD96;
+  animation: crit-anim 1s infinite;
+}
+
+@keyframes crit-anim {
+  0% {background-color: #F8FD00;}
+  50% {background-color: #FF0000;}
+  100% {background-color: #F8FD00;}
+}
+
 /* Modules center */
 #workspaces {
   background: rgba(0, 0, 0, 0.5);
