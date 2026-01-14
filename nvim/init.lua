@@ -178,8 +178,9 @@ vim.o.confirm = true
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
--- Do not copy deleted stuff
+-- Do not copy deleted or pasted stuff
 vim.keymap.set({ "n", "v" }, "d", '"_d')
+vim.keymap.set("x", "p", "P")
 
 --Custom keymaps
 vim.keymap.set("n", "<F8>", ":NvimTreeToggle<CR>")
@@ -197,7 +198,7 @@ vim.keymap.set("i", "(", "()<ESC>i")
 vim.keymap.set("i", "[", "[]<ESC>i")
 vim.keymap.set("i", "{", "{}<ESC>i")
 vim.keymap.set("i", '"', '""<ESC>i')
-vim.keymap.set("i", "'", "'()<ESC>i")
+vim.keymap.set("i", "'", "''<ESC>i")
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -724,7 +725,7 @@ require("lazy").setup({
 			local servers = {
 				clangd = {},
 				-- gopls = {},
-				-- pyright = {},
+				pyright = {},
 				-- rust_analyzer = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
